@@ -4,8 +4,16 @@
     email: "电子邮件"
     password: "密 码"
     submit: '登 录'
+    failed_msg: '登录失败，请重试。'
   sign_up:
     title: '注 册'
+    email: "电子邮件"
+    password: "密 码"
+    password_confirmation: "重复密码"
+    submit: '注 册'
 
   forgot_password:
     title: '忘记密码?'
+    email: "电子邮件"
+    submit: '发送邮件'
+    email_sent: '邮件已发出,请按照邮件中的说明重置密码。'

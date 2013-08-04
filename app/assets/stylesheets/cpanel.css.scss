@@ -59,23 +59,27 @@ margin-top:5px;
 #body{
   @include min-height(2500px);
 }
+
+
 /* body end */
 
 /* form */
+/*
 textarea{
   @include min-width(500px);
 }
 .controls label.checkbox{
   @include float(left);
-  display: bloak;
   padding-top:5px;
 }
 
 .controls > .checkbox:first-child {
 }
+*/
 /* form end */
 
 /* base css*/
+/*
 .page-header{
   padding-bottom:2px;
   margin:0 0 10px 0;
@@ -85,7 +89,7 @@ textarea{
 ul.breadcrumb{
   background-color:#fff;
 }
-
+*/
 /* base css end*/
 
 
