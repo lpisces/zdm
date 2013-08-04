@@ -1,5 +1,4 @@
-admin: 'admin@21lou.net'
-
+admin: 'iamalazyrat@gmail.com'
 
 site:
   name: 'app'
@@ -8,7 +7,6 @@ site:
 nav:
   items: [
     {cname: '设置', controller: 'settings', link: '/cpanel/settings'}, 
-    {cname: '用户', controller: 'users', link: '/cpanel/users'},
   ]
 
 fnav:

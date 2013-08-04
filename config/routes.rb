@@ -1,4 +1,5 @@
 August::Application.routes.draw do
+
   root :to =>  "home#index"
 
   
@@ -7,4 +8,9 @@ August::Application.routes.draw do
   devise_scope :user do 
     get "/passwords/message" => "passwords#message"
   end
+
+  scope '/cpanel' do
+    resources :settings
+  end
+
 end
