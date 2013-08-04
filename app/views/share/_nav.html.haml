@@ -9,3 +9,9 @@
         - else
           %li
             %a{:href => i.link, :style => 'padding:5px;'}= i.cname
+
+    %ul.nav.pull-right
+      - if user_signed_in?
+        %li= link_to "登出", destroy_user_session_path, :method => :get
+      - else
+        %li= link_to "登录", new_user_session_path, :method => :get

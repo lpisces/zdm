@@ -1,0 +1,21 @@
+%fieldset
+  %legend= I18n.t('sign_in.title')
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f|
+  .control-group
+    = f.label :email , I18n.t('sign_in.email'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.email_field :email, :autofocus => true
+  .control-group
+    = f.label :password, I18n.t('sign_in.password'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.password_field :password
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      - if devise_mapping.rememberable?
+        %label.checkbox
+          = f.check_box :remember_me
+          记住我
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit "登录", :class => 'btn btn-mini btn-success'
+= render "devise/shared/links"

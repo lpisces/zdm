@@ -1,0 +1,11 @@
+"zh-CN":
+  sign_in:
+    title: "登 录"
+    email: "电子邮件"
+    password: "密 码"
+    submit: '登 录'
+  sign_up:
+    title: '注 册'
+
+  forgot_password:
+    title: '忘记密码?'
