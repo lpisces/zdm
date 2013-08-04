@@ -1,15 +1,23 @@
-%p#notice= notice
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => settings_path}= I18n.t('settings.title')
+    %span.divider /
+  %li.active= I18n.t('common.show')
 
-%p
-  %b Name:
-  = @setting.name
-%p
-  %b Value:
-  = @setting.value
-%p
-  %b Summary:
-  = @setting.summary
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('settings.name')
+    %td= @setting.name
+  %tr
+    %th= I18n.t('settings.value')
+    %td= @setting.value
+  %tr
+    %th= I18n.t('settings.summary')
+    %td= @setting.summary
 
-= link_to 'Edit', edit_setting_path(@setting)
+= link_to I18n.t('common.show'), @setting
 \|
-= link_to 'Back', settings_path
+= link_to I18n.t('common.back'), settings_path

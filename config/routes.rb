@@ -13,4 +13,5 @@ August::Application.routes.draw do
     resources :settings
   end
 
+  match '/cpanel', :to => 'cpanel#index', :via => [:get]
 end

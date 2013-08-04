@@ -1,7 +1,6 @@
 .navbar
   .navbar-inner
-    %a.brand{:href => "/"} App
-
+    %a.brand{:href => "/"}= Setting.find_by_name('site_name').try('value')
     %ul.nav
       - Settings.nav.items.each do |i|
         - if i.controller ==  self.controller_name.to_s

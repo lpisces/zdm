@@ -1,7 +1,14 @@
-%h1 Editing setting
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => settings_path}= I18n.t('settings.title')
+    %span.divider /
+  %li.active= I18n.t('common.edit')
 
 = render 'form'
 
-= link_to 'Show', @setting
+= link_to I18n.t('common.show'), @setting
 \|
-= link_to 'Back', settings_path
+= link_to I18n.t('common.back'), settings_path

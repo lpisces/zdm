@@ -1,12 +1,14 @@
-%h1 Listing settings
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t('settings.title')
 
-%table
+%table.table.table-condensed.table-bordered.table-hover
   %tr
-    %th Name
-    %th Value
-    %th Summary
-    %th
-    %th
+    %th= I18n.t('settings.name')
+    %th= I18n.t('settings.value')
+    %th= I18n.t('settings.summary')
     %th
 
   - @settings.each do |setting|
@@ -14,10 +16,10 @@
       %td= setting.name
       %td= setting.value
       %td= setting.summary
-      %td= link_to 'Show', setting
-      %td= link_to 'Edit', edit_setting_path(setting)
-      %td= link_to 'Destroy', setting, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_setting_path(setting)
+        = link_to '<i class="icon-remove"></i>'.html_safe, setting, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
 
 %br
 
-= link_to 'New Setting', new_setting_path
+%a.btn.btn-success.btn-mini{:href => new_setting_path}= I18n.t('common.new')
