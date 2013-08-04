@@ -12,6 +12,7 @@
 
     %ul.nav.pull-right
       - if user_signed_in?
-        %li= link_to "登出", destroy_user_session_path, :method => :get
+        %li= link_to I18n.t('sign_out.title'), destroy_user_session_path, :method => :get, :style => 'padding:5px;'
       - else
-        %li= link_to "登录", new_user_session_path, :method => :get
+        %li= link_to I18n.t('sign_in.title'), new_user_session_path, :method => :get, :style => 'padding:5px;'
+        %li= link_to I18n.t('sign_up.title'), new_user_registration_path, :method => :get, :style => 'padding:5px;'

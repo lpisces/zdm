@@ -1,4 +1,6 @@
 "zh-CN":
+  sign_out:
+    title: "登 出"
   sign_in:
     title: "登 录"
     email: "电子邮件"

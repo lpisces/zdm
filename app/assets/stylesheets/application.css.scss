@@ -55,3 +55,8 @@ margin-top:5px;
 }
 
 /* footer end */
+/* body */
+#body{
+  @include min-height(2500px);
+}
+
