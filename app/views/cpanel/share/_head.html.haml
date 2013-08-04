@@ -6,4 +6,5 @@
 %meta{:name => 'author', :content => Setting.find_by_name('author').try(:value)}
 %title= Setting.find_by_name('title').try(:value) 
 = stylesheet_link_tag "cpanel"
+= csrf_meta_tag
 

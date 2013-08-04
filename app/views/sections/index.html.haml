@@ -1,0 +1,25 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t('sections.title')
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('sections.name')
+    %th= I18n.t('sections.sort')
+    %th= I18n.t('sections.summary')
+    %th
+
+  - @sections.each do |section|
+    %tr
+      %td= section.name
+      %td= section.sort
+      %td= section.summary
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_section_path(section)
+        = link_to '<i class="icon-remove"></i>'.html_safe, section, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
+
+%br
+
+%a.btn.btn-success.btn-mini{:href => new_section_path}= I18n.t('common.new')

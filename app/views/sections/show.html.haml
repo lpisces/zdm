@@ -1,0 +1,23 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => sections_path}= I18n.t('sections.title')
+    %span.divider /
+  %li.active= I18n.t('common.show')
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('sections.name')
+    %td= @section.name
+  %tr
+    %th= I18n.t('sections.sort')
+    %td= @section.sort
+  %tr
+    %th= I18n.t('sections.summary')
+    %td= @section.summary
+
+= link_to I18n.t('common.show'), @section
+\|
+= link_to I18n.t('common.back'), sections_path
