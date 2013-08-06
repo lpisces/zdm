@@ -1,15 +1,18 @@
-= form_for @<%= singular_table_name %> do |f|
+= form_for(@<%= singular_table_name %>, :html => {:class => 'form-horizontal'} ) do |f|
   - if @<%= singular_table_name %>.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this <%= singular_table_name %> from being saved:"
-      %ul
-        - @<%= singular_table_name %>.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @<%= singular_table_name %>.errors.count)
 
 <% for attribute in attributes -%>
-  .field
-    = f.label :<%= attribute.name %>
-    = f.<%= attribute.field_type %> :<%= attribute.name %>
+  .control-group{:class => ('error' unless @<%= singular_table_name %>.errors[:<%= attribute.name %>].empty?)}
+    = f.label :<%= attribute.name %>, I18n.t('<%= plural_table_name %>.<%= attribute.name %>'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.<%= attribute.field_type %> :<%= attribute.name %>, :autofocus => true
+      %span.help-inline= @setting.errors[:<%= attribute.name %>].first unless @<%= singular_table_name %>.errors[:<%= attribute.name %>].empty?
 <% end -%>
-  .actions
-    = f.submit 'Save'
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('<%= plural_table_name %>.submit'), :class => 'btn btn-mini btn-success'

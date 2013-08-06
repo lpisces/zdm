@@ -1,12 +1,15 @@
-%h1 Listing <%= plural_table_name %>
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("<%= plural_table_name %>.title")
 
-%table
+
+%table.table.table-condensed.table-bordered.table-hover
   %tr
 <% for attribute in attributes -%>
-    %th <%= attribute.human_name %>
+    %th= I18n.t('<%= plural_table_name %>.<%= attribute.human_name %>')
 <% end -%>
-    %th
-    %th
     %th
 
   - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
@@ -14,10 +17,8 @@
 <% for attribute in attributes -%>
       %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-      %td= link_to 'Show', <%= singular_table_name %>
-      %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-      %td= link_to 'Destroy', <%= singular_table_name %>, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+        = link_to '<i class="icon-remove"></i>'.html_safe, <%= singular_table_name %>, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
 
-%br
-
-= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
+= link_to I18n.t('common.new'), new_<%= singular_table_name %>_path
