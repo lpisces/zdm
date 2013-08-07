@@ -8,6 +8,7 @@ nav:
   items: [
     {cname: '设置', controller: 'settings', link: '/cpanel/settings'}, 
     {cname: '分类', controller: 'sections', link: '/cpanel/sections'}, 
+    {cname: '节点', controller: 'nodes', link: '/cpanel/nodes'}, 
   ]
 
 fnav:

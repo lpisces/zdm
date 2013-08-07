@@ -14,3 +14,13 @@
     sort: '排序'
     summary: '简介'
     submit: '保 存'
+
+  nodes:
+    title: '节点'
+    name: '名称'
+    sort: '排序'
+    summary: '简介'
+    section_id: '分类ID'
+    section: '分类'
+    submit: '保 存'
+

@@ -9,7 +9,7 @@
     = f.label :<%= attribute.name %>, I18n.t('<%= plural_table_name %>.<%= attribute.name %>'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
       = f.<%= attribute.field_type %> :<%= attribute.name %>, :autofocus => true
-      %span.help-inline= @setting.errors[:<%= attribute.name %>].first unless @<%= singular_table_name %>.errors[:<%= attribute.name %>].empty?
+      %span.help-inline= @<%= singular_table_name %>.errors[:<%= attribute.name %>].first unless @<%= singular_table_name %>.errors[:<%= attribute.name %>].empty?
 <% end -%>
 
 

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130804142716) do
+ActiveRecord::Schema.define(version: 20130806164608) do
+
+  create_table "nodes", force: true do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.string   "summary"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sections", force: true do |t|
     t.string   "name"

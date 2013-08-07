@@ -1,6 +1,7 @@
 August::Application.routes.draw do
 
 
+
   root :to =>  "home#index"
 
   
@@ -14,6 +15,7 @@ August::Application.routes.draw do
   scope '/cpanel' do
     resources :settings
     resources :sections
+    resources :nodes
   end
 
 end

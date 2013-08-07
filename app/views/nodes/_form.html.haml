@@ -1,0 +1,33 @@
+= form_for(@node, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @node.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @node.errors.count)
+
+  .control-group{:class => ('error' unless @node.errors[:name].empty?)}
+    = f.label :name, I18n.t('nodes.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @node.errors[:name].first unless @node.errors[:name].empty?
+  .control-group{:class => ('error' unless @node.errors[:sort].empty?)}
+    = f.label :sort, I18n.t('nodes.sort'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :sort, :autofocus => true
+      %span.help-inline= @node.errors[:sort].first unless @node.errors[:sort].empty?
+  .control-group{:class => ('error' unless @node.errors[:summary].empty?)}
+    = f.label :summary, I18n.t('nodes.summary'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_area :summary, :autofocus => true
+      %span.help-inline= @node.errors[:summary].first unless @node.errors[:summary].empty?
+  .control-group{:class => ('error' unless @node.errors[:section_id].empty?)}
+    = f.label :section_id, I18n.t('nodes.section_id'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.number_field :section_id, :autofocus => true
+      /= options_from_collection_for_select(Section.all, :id, :name)
+      = f.select(:section_id, Section.all.map { |section| [section.name, section.id] })
+      %span.help-inline= @node.errors[:section_id].first unless @node.errors[:section_id].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('nodes.submit'), :class => 'btn btn-mini btn-success'
