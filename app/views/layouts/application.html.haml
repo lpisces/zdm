@@ -3,8 +3,9 @@
   %head
     = render 'share/head'
   %body
-    .container#nav
+    .header.typo
       = render 'share/nav'
-    .container
-      .span25#body{:style => 'margin:0px;'}= yield
-    = render 'share/footer'
+    .body.typo
+      = yield
+    .footer
+      = render 'share/footer'

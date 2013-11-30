@@ -1,25 +1,32 @@
-= form_for @cpanel_node do |f|
+= form_for(@cpanel_node, :html => {:class => 'form-horizontal'} ) do |f|
   - if @cpanel_node.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cpanel_node.errors.count, "error")} prohibited this cpanel_node from being saved:"
-      %ul
-        - @cpanel_node.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_node.errors.count)
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :sort
-    = f.number_field :sort
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :section_id
-    = f.number_field :section_id
-  .field
-    = f.label :cnt
-    = f.number_field :cnt
-  .actions
-    = f.submit 'Save'
+  .control-group{:class => ('error' unless @cpanel_node.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_nodes.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @cpanel_node.errors[:name].first unless @cpanel_node.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_node.errors[:sort].empty?)}
+    = f.label :sort, I18n.t('cpanel_nodes.sort'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :sort, :autofocus => true
+      %span.help-inline= @cpanel_node.errors[:sort].first unless @cpanel_node.errors[:sort].empty?
+  .control-group{:class => ('error' unless @cpanel_node.errors[:summary].empty?)}
+    = f.label :summary, I18n.t('cpanel_nodes.summary'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :summary, :autofocus => true
+      %span.help-inline= @cpanel_node.errors[:summary].first unless @cpanel_node.errors[:summary].empty?
+  .control-group{:class => ('error' unless @cpanel_node.errors[:section_id].empty?)}
+    = f.label :section_id, I18n.t('cpanel_nodes.section_id'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      //= f.number_field :section_id, :autofocus => true
+      = f.select(:section_id, Cpanel::Section.all.map { |section| [section.name, section.id] })
+      %span.help-inline= @cpanel_node.errors[:section_id].first unless @cpanel_node.errors[:section_id].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_nodes.submit'), :class => 'btn btn-mini btn-success'

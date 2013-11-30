@@ -1,4 +1,6 @@
 "zh-CN":
+  frontend:
+    title: '前 台'
   sign_out:
     title: "登 出"
   sign_in:

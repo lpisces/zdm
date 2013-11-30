@@ -1,62 +1,88 @@
-$gridColumns: 25;
-$gridColumnWidth: 30px;
-$gridGutterWidth: 10px;
-$navbarHeight: 30px;
-@import "bootstrap";
+@import 'typo';
 @import 'font-awesome';
-
 @import "compass/utilities/general/min";
-@import "compass/utilities/general/float";
-
-/* customize style start*/
-
-body{
-  background-image: url(/bg.png);
-  background-repeat:repeat;
-  background-color:#fff;
+a, a:hover{
+  text-decoration: none;
+  color: #4b65c6;
 }
 
-.breadcrumb{
-  background-color:transparent;
-}
 
-/* nav */
-
-#nav{
-margin-top:5px;
-}
-
-/* nav end */
-
-/* footer */
-
-#footer{
-  width:100%;
-  @include min-height(100px);
-  border-top:1px solid #eee;
-  margin-top:10px;
-  p{
-   float:right;
-   padding:5px 10px;
+.header{
+  background-color:#f6f6f6;
+  height:40px;
+  border-bottom: 1px solid #e9e9e9;
+  .wrapper{
+    margin: 0 auto;
+    width:990px;
+    height:40px;
+    .logo{
+      float:left;
+      height:40px;
+      line-height:40px;
+      font-weight:bold;
+      width:165px;
+      margin-right:10px;
+      text-align:center;
+      font-size:24px;
+      a{
+        color:#3a87ad;
+      }
+    }
+    .nav{
+      float:left;
+      height:40px;
+      line-height:40px;
+      width:450px;
+      .node{
+        float: left;
+        margin: 0 10px;
+        font-size: 18px;
+        color: #4b65c6;
+      }
+      .active{
+        border-bottom: 2px solid #4b65c6;
+      }
+    }
+    .search{
+      float:left;
+      height:40px;
+      line-height:40px;
+      input{
+        font-size:18px;
+      }
+      button{
+        font-size:18px;
+        margin-left:-7px;
+        padding:0 5px;
+        border-left:0px;
+      }
+    }
+    .account{
+      float:right;
+      height:40px;
+      line-height:40px;
+    }
   }
-  ul.links{
-   float:right;
-   li{
-     float:left;
-     list-style:none;
-     margin:0px;
-     padding:5px 10px;
-     a{
-       text-decoration:none;
-       font-size:12px;
-     }
-   }
-  }
 }
 
-/* footer end */
-/* body */
-#body{
+.body{
   @include min-height(2500px);
+  width:990px;
+  margin:0 auto;
 }
 
+.footer{
+  border-top: 1px solid #e9e9e9;
+  .wrapper{
+    height:40px;
+    line-height:40px;
+    width:990px;
+    margin:0 auto;
+    .copyright{
+      float:right;
+      color: #444;
+    }
+  }
+}
+ 
+@import 'home';

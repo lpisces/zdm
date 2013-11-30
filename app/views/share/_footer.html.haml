@@ -1,10 +1,7 @@
-#footer
-  .container
-    .span25 
-      %p.muted.credit= "&copy; 2013 &nbsp;|&nbsp;All rights reserved.".html_safe
-      %ul.links
-        %li
-          %a{:href => '#'} 关于
-        %li
-          %a{:href => '#'} 联系我们
+.wrapper
+  .copyright= "&copy; 2013 &nbsp;|&nbsp;All rights reserved.".html_safe
+  .links
+    %a{:href => '#'} 关于我们
+    %a{:href => '#'} 联系我们
+
 = javascript_include_tag "application"

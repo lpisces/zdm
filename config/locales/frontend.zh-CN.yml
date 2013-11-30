@@ -1,0 +1,5 @@
+:'zh-CN':
+  frontend:
+    sign_in: '登 录'
+    sign_out: '登 出'
+    sign_up: '注 册'

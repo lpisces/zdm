@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  price: 9.99
+  coupon_price: 9.99
+  master_pic_url: MyString
+  sub_pic_url: MyText
+  click_url: MyString
+  node_id: 1
+
+two:
+  title: MyString
+  price: 9.99
+  coupon_price: 9.99
+  master_pic_url: MyString
+  sub_pic_url: MyText
+  click_url: MyString
+  node_id: 1

@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806164608) do
+ActiveRecord::Schema.define(version: 20131130091110) do
+
+  create_table "attachments", force: true do |t|
+    t.string   "name"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_attachments", force: true do |t|
+    t.string   "name"
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_nodes", force: true do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.string   "summary"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_sections", force: true do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_settings", force: true do |t|
+    t.string   "name"
+    t.string   "value"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_things", force: true do |t|
+    t.string   "title"
+    t.decimal  "price",          precision: 10, scale: 0
+    t.decimal  "coupon_price",   precision: 10, scale: 0
+    t.string   "master_pic_url"
+    t.text     "sub_pic_url"
+    t.string   "click_url"
+    t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "nodes", force: true do |t|
     t.string   "name"
@@ -38,6 +89,18 @@ ActiveRecord::Schema.define(version: 20130806164608) do
     t.datetime "updated_at"
   end
 
+  create_table "things", force: true do |t|
+    t.string   "title"
+    t.decimal  "price",          precision: 10, scale: 0
+    t.decimal  "coupon_price",   precision: 10, scale: 0
+    t.string   "master_pic_url"
+    t.text     "sub_pic_url"
+    t.string   "click_url"
+    t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -54,7 +117,7 @@ ActiveRecord::Schema.define(version: 20130806164608) do
     t.boolean  "admin",                  default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

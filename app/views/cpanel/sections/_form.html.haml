@@ -1,16 +1,26 @@
-= form_for @cpanel_section do |f|
+= form_for(@cpanel_section, :html => {:class => 'form-horizontal'} ) do |f|
   - if @cpanel_section.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cpanel_section.errors.count, "error")} prohibited this cpanel_section from being saved:"
-      %ul
-        - @cpanel_section.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_section.errors.count)
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :sort
-    = f.number_field :sort
-  .actions
-    = f.submit 'Save'
+  .control-group{:class => ('error' unless @cpanel_section.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_sections.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @cpanel_section.errors[:name].first unless @cpanel_section.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_section.errors[:sort].empty?)}
+    = f.label :sort, I18n.t('cpanel_sections.sort'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :sort, :autofocus => true
+      %span.help-inline= @cpanel_section.errors[:sort].first unless @cpanel_section.errors[:sort].empty?
+  .control-group{:class => ('error' unless @cpanel_section.errors[:summary].empty?)}
+    = f.label :summary, I18n.t('cpanel_sections.summary'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :summary, :autofocus => true
+      %span.help-inline= @cpanel_section.errors[:summary].first unless @cpanel_section.errors[:summary].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_sections.submit'), :class => 'btn btn-mini btn-success'

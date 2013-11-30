@@ -9,6 +9,6 @@ class CpanelController < ApplicationController
 
 
   def index
-    redirect_to settings_path
+    redirect_to cpanel_settings_path
   end
 end

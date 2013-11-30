@@ -1,3 +1,109 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home-wrapper{
+  .head{
+    font-weight:normal;
+    font-size:21px;
+    color:#444;
+    margin:10px;
+  }
+
+  .sections{
+    border-left: 4px solid #c9c9c9;
+    background-color:#f6f6f6;
+    margin:10px 0 0 0;
+    padding:5px;
+    a{
+      font-size:14px;
+      margin: 0 10px;
+    }
+  }
+  .things{
+    width:700px;
+    float:left;
+    .thing{
+      border-left:4px solid #4b65c6;
+      @include min-height(300px);
+      background-color:#f6f6f6;
+      .block-1{
+        float:left;
+        width:450px;
+        margin:10px;
+        @include min-height(200px);
+        .info{
+          margin-top:-10px;
+          font-size:14px;
+          @include min-height(170px);
+        }
+        .source{
+          margin-top:10px;
+          @include min-height(20px);
+          font-size:14px;
+        }
+      }
+      .block-2{
+        float:left;
+        .thumb img{
+          width:200px;
+        }
+
+        .link{
+          width:200px;
+          height:40px;
+          margin-top:10px;
+          a{
+            text-align:center;
+            margin:0 auto;
+            display:block;
+            font-weight:bold;
+          }
+        }
+      }
+    }
+  }
+
+  .blocks{
+    width:280px;
+    float:right;
+    .tags{
+      border-top:4px solid #4b65c6;
+      margin-top:10px;
+      @include min-height(400px);
+      background-color:#f6f6f6;
+      .wrapper{
+        margin:10px;
+        a{
+          margin:5px;
+          font-size:14px;
+        }
+      }
+    }
+  
+    .malls{
+      border-top:4px solid #4b65c6;
+      margin-top:10px;
+      @include min-height(400px);
+      background-color:#f6f6f6;
+      .wrapper{
+        margin:10px;
+        img{
+          width:80px;
+          margin:2px;
+        }
+      }
+    }
+  
+    .sales{
+      border-top:4px solid #4b65c6;
+      margin-top:10px;
+      @include min-height(400px);
+      background-color:#f6f6f6;
+    }
+
+    .ads{
+      border-top:4px solid #4b65c6;
+      margin-top:10px;
+      @include min-height(400px);
+      background-color:#f6f6f6;
+    }
+
+  }
+}

@@ -1,1 +1,1 @@
-json.extract! @cpanel_setting, :name, :value, :description, :created_at, :updated_at
+json.extract! @cpanel_setting, :name, :value, :summary, :created_at, :updated_at

@@ -1,6 +1,6 @@
 .navbar
   .navbar-inner
-    %a.brand{:href => "/"}= Setting.find_by_name('site_name').try('value')
+    %a.brand{:href => "/cpanel"}= Setting.find_by_name('site_name').try('value')
     %ul.nav
       - Settings.nav.items.each do |i|
         - if i.controller ==  self.controller_name.to_s
@@ -12,6 +12,7 @@
 
     %ul.nav.pull-right
       - if user_signed_in?
+        %li= link_to I18n.t('frontend.title'), root_path, :method => :get, :style => 'padding:5px;'
         %li= link_to I18n.t('sign_out.title'), destroy_user_session_path, :method => :get, :style => 'padding:5px;'
       - else
         %li= link_to I18n.t('sign_in.title'), new_user_session_path, :method => :get, :style => 'padding:5px;'

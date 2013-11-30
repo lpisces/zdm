@@ -1,21 +1,24 @@
-%h1 Listing cpanel_sections
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("cpanel_sections.title")
 
-%table
+
+%table.table.table-condensed.table-bordered.table-hover
   %tr
-    %th Name
-    %th Sort
-    %th
-    %th
+    %th= I18n.t('cpanel_sections.name')
+    %th= I18n.t('cpanel_sections.sort')
+    %th= I18n.t('cpanel_sections.summary')
     %th
 
   - @cpanel_sections.each do |cpanel_section|
     %tr
       %td= cpanel_section.name
       %td= cpanel_section.sort
-      %td= link_to 'Show', cpanel_section
-      %td= link_to 'Edit', edit_cpanel_section_path(cpanel_section)
-      %td= link_to 'Destroy', cpanel_section, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= cpanel_section.summary
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_section_path(cpanel_section)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_section, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
 
-%br
-
-= link_to 'New Section', new_cpanel_section_path
+= link_to I18n.t('common.new'), new_cpanel_section_path

@@ -1,13 +1,14 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '4.0.0'
 
-#gem 'mysql2'
-gem 'sqlite3'
+gem 'mysql2'
+#gem 'sqlite3'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 2.3.2.0'
-gem 'compass-rails', github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
+gem "compass-rails", "~> 2.0.alpha.0"
 gem 'font-awesome-sass-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -30,6 +31,22 @@ gem "haml-rails"
 #auth
 gem 'devise'
 
+#javascript runtime
+gem 'therubyracer', platforms: :ruby
+
+#editor
+gem 'rails_kindeditor', '~> 0.4.2'
+
+#upload
+gem 'carrierwave'
+gem 'jquery-fileupload-rails'
+gem 'mini_magick'
+
 group :doc do
   gem 'sdoc', require: false
+end
+
+group :development do
+  gem "spring"
+  gem 'byebug'
 end

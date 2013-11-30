@@ -1,21 +1,23 @@
 :'zh-CN':
+  home:
+    title: '前台'
   cpanel:
     title: '后 台'
-  settings:
+  cpanel_settings:
     title: '系统设置'
     name: '名称'
     value: '值'
     summary: '简介'
     submit: '保 存'
 
-  sections:
+  cpanel_sections:
     title: '分类'
     name: '名称'
     sort: '排序'
     summary: '简介'
     submit: '保 存'
 
-  nodes:
+  cpanel_nodes:
     title: '节点'
     name: '名称'
     sort: '排序'
@@ -23,4 +25,22 @@
     section_id: '分类ID'
     section: '分类'
     submit: '保 存'
+
+  cpanel_things:
+    title: '物品'
+    thing_title: '名称'
+    price: '原价'
+    coupon_price: '折扣价'
+    click_url: '优惠链接'
+    master_pic_url: '主图'
+    sub_pic_url: '副图'
+    node_id: '节点'
+    node: '节点'
+    submit: '保存'
+  cpanel_attachments:
+    title: '附件'
+    name: '名称'
+    file: '文件路径'
+    submit: '保存'
+
 

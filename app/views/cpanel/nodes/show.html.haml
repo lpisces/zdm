@@ -1,21 +1,26 @@
-%p#notice= notice
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => cpanel_nodes_path}= I18n.t("cpanel_nodes.title")
+    %span.divider /
+  %li.active= I18n.t('common.show')
 
-%p
-  %b Name:
-  = @cpanel_node.name
-%p
-  %b Sort:
-  = @cpanel_node.sort
-%p
-  %b Description:
-  = @cpanel_node.description
-%p
-  %b Section:
-  = @cpanel_node.section_id
-%p
-  %b Cnt:
-  = @cpanel_node.cnt
-
-= link_to 'Edit', edit_cpanel_node_path(@cpanel_node)
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+  %th= I18n.t('cpanel_nodes.name')
+  %td= @cpanel_node.name
+  %tr
+  %th= I18n.t('cpanel_nodes.sort')
+  %td= @cpanel_node.sort
+  %tr
+  %th= I18n.t('cpanel_nodes.summary')
+  %td= @cpanel_node.summary
+  %tr
+  %th= I18n.t('cpanel_nodes.section')
+  %td= @cpanel_node.try(:section).name
+  
+= link_to I18n.t('common.edit'), edit_cpanel_node_path(@cpanel_node)
 \|
-= link_to 'Back', cpanel_nodes_path
+= link_to I18n.t('common.back'), cpanel_nodes_path

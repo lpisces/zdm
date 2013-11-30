@@ -1,27 +1,26 @@
-%h1 Listing cpanel_nodes
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("cpanel_nodes.title")
 
-%table
+
+%table.table.table-condensed.table-bordered.table-hover
   %tr
-    %th Name
-    %th Sort
-    %th Description
-    %th Section
-    %th Cnt
-    %th
-    %th
+    %th= I18n.t('cpanel_nodes.name')
+    %th= I18n.t('cpanel_nodes.sort')
+    %th= I18n.t('cpanel_nodes.summary')
+    %th= I18n.t('cpanel_nodes.section')
     %th
 
   - @cpanel_nodes.each do |cpanel_node|
     %tr
       %td= cpanel_node.name
       %td= cpanel_node.sort
-      %td= cpanel_node.description
-      %td= cpanel_node.section_id
-      %td= cpanel_node.cnt
-      %td= link_to 'Show', cpanel_node
-      %td= link_to 'Edit', edit_cpanel_node_path(cpanel_node)
-      %td= link_to 'Destroy', cpanel_node, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= cpanel_node.summary
+      %td= cpanel_node.try(:section).name
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_node_path(cpanel_node)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_node, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
 
-%br
-
-= link_to 'New Node', new_cpanel_node_path
+= link_to I18n.t('common.new'), new_cpanel_node_path

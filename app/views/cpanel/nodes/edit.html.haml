@@ -1,7 +1,15 @@
-%h1 Editing cpanel_node
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => cpanel_nodes_path}= I18n.t("cpanel_nodes.title")
+    %span.divider /
+  %li.active= I18n.t('common.edit')
+
 
 = render 'form'
 
-= link_to 'Show', @cpanel_node
+= link_to I18n.t('common.show'), @cpanel_node
 \|
-= link_to 'Back', cpanel_nodes_path
+= link_to I18n.t('common.back'), cpanel_nodes_path

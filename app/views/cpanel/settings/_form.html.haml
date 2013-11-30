@@ -1,19 +1,26 @@
-= form_for @cpanel_setting do |f|
+= form_for(@cpanel_setting, :html => {:class => 'form-horizontal'} ) do |f|
   - if @cpanel_setting.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@cpanel_setting.errors.count, "error")} prohibited this cpanel_setting from being saved:"
-      %ul
-        - @cpanel_setting.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_setting.errors.count)
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :value
-    = f.text_field :value
-  .field
-    = f.label :description
-    = f.text_field :description
-  .actions
-    = f.submit 'Save'
+  .control-group{:class => ('error' unless @cpanel_setting.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_settings.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @cpanel_setting.errors[:name].first unless @cpanel_setting.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_setting.errors[:value].empty?)}
+    = f.label :value, I18n.t('cpanel_settings.value'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :value, :autofocus => true
+      %span.help-inline= @cpanel_setting.errors[:value].first unless @cpanel_setting.errors[:value].empty?
+  .control-group{:class => ('error' unless @cpanel_setting.errors[:summary].empty?)}
+    = f.label :summary, I18n.t('cpanel_settings.summary'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :summary, :autofocus => true
+      %span.help-inline= @cpanel_setting.errors[:summary].first unless @cpanel_setting.errors[:summary].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_settings.submit'), :class => 'btn btn-mini btn-success'

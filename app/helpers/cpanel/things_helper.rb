@@ -1,0 +1,2 @@
+module Cpanel::ThingsHelper
+end

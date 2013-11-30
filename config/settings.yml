@@ -9,6 +9,8 @@ nav:
     {cname: '设置', controller: 'settings', link: '/cpanel/settings'}, 
     {cname: '分类', controller: 'sections', link: '/cpanel/sections'}, 
     {cname: '节点', controller: 'nodes', link: '/cpanel/nodes'}, 
+    {cname: '物品', controller: 'things', link: '/cpanel/things'}, 
+    {cname: '附件', controller: 'attachments', link: '/cpanel/attachments'}, 
   ]
 
 fnav:
