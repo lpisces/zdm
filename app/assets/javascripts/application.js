@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require sidebar-follow-jquery
 //= require jquery_ujs
-//= require kindeditor
 //= require turbolinks
-//= require bootstrap
-//= require_tree .
+//= require home
+//= require section

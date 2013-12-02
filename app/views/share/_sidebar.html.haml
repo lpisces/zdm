@@ -1,0 +1,6 @@
+.sidebar-wrap
+  .head 商品分类
+
+  .sections
+    - Section.all.each do |s|
+      %a.section{:href => "/section/#{s.name}"}= s.name

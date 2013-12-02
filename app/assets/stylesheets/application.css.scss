@@ -3,9 +3,11 @@
 @import "compass/utilities/general/min";
 a, a:hover{
   text-decoration: none;
-  color: #4b65c6;
 }
 
+a:hover{
+  color: #cc6600;
+}
 
 .header{
   background-color:#f6f6f6;
@@ -65,6 +67,37 @@ a, a:hover{
   }
 }
 
+.sidebar-wrap {
+  height: 300px;
+  width: 120px;
+  border-top:4px solid #4b65c6;
+  background-color:#f6f6f6;
+  float:left;
+  margin: 0 0 0 -130px;
+  padding: 0;
+  .head{
+    font-weight:normal;
+    font-size:18px;
+    color:#444;
+    margin:10px;
+  }
+  .sections{
+    margin-left: 10px;
+    a.section{
+      font-size:14px;
+      margin: 10px 10px 0 0 ;
+      display:block;
+      float:left;
+      padding:2px 4px;
+      color:#444;
+    }
+    a.section:hover{
+      background-color:#fff;
+      color:#cc6600;
+    }
+  }
+}
+
 .body{
   @include min-height(2500px);
   width:990px;
@@ -86,3 +119,4 @@ a, a:hover{
 }
  
 @import 'home';
+@import 'section';

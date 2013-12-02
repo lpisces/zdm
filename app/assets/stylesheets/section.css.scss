@@ -1,0 +1,78 @@
+.section-wrapper{
+  .head{
+    font-weight:normal;
+    font-size:21px;
+    color:#444;
+    margin:10px;
+  }
+
+  .breadcrumb{
+    border-left: 4px solid #c9c9c9;
+    background-color:#f6f6f6;
+    margin:10px 0 0 0;
+    padding:5px;
+    color:#ccc;
+    a{
+      font-size:14px;
+      margin: 0 5px;
+    }
+  }
+
+  .nodes{
+    background-color:#f6f6f6;
+    height: 80px;
+    margin-top:10px;
+    padding:0 5px;
+    a.node{
+      font-size:14px;
+      margin: 0 5px;
+    }
+    a.active{
+      color: #cc6600;
+    }
+  }
+
+  .things{
+    width:1000px;
+    margin-top:10px;
+    .thing{
+      background-color:#f6f6f6;
+      float:left;
+      width:323px;
+      height:400px;
+      margin-right:10px;
+      margin-bottom:10px;
+      .thumb img{
+        width:300px;
+        margin:0 auto;
+        display:block;
+        margin-top:10px;
+      }
+      .title{
+        margin:10px;
+        a{
+          font-size:16px;
+        }
+      }
+      .info{
+        margin:0 10px;
+      }
+      .prices{
+        margin:10px;
+        span.coupon_price{
+          font-size:24px;
+          font-weight:bold;
+          color:#cc6600;
+        }
+        span.price{
+          text-decoration: line-through;
+        }
+        a.link{
+          float:right;
+          line-height:43px;
+        }
+      }
+    }
+  }
+}
+
