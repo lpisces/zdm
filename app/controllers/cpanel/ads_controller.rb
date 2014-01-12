@@ -69,6 +69,6 @@ class Cpanel::AdsController < CpanelController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cpanel_ad_params
-      params.require(:cpanel_ad).permit(:position, :height, :width, :url, :description, :is_displayed)
+      params.require(:cpanel_ad).permit(:position, :height, :width, :code, :description, :is_displayed)
     end
 end

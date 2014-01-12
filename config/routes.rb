@@ -1,15 +1,11 @@
 August::Application.routes.draw do
 
-  namespace :cpanel do
-    resources :ads
-  end
-
   #frontend
   root :to =>  "home#index"
   match "sections", :to => 'section#map', :via => [:get,]
   match "section/:section/node/:node", :to => 'node#show', :via => [:get]
   match "section/:name", :to => 'section#index', :via => [:get,]
-  match "thing/:title", :to => 'thing#show', :via => [:get,]
+  match "thing/:title", :to => 'thing#show', :via => [:get,], :constraints => { :title => /[^\/]+/ }
 
 
   #cpanel
@@ -24,6 +20,8 @@ August::Application.routes.draw do
     resources :attachments
     resources :tags
     resources :malls
+    resources :promotions
+    resources :ads
   end
 
   #account

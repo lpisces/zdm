@@ -8,16 +8,16 @@
   %li.active= I18n.t('common.show')
 
 %table.table.table-condensed.table-bordered.table-hover
-    %tr
-    %th= I18n.t('cpanel_setting.Name')
+  %tr
+    %th= I18n.t('cpanel_settings.name')
     %td= @cpanel_setting.name
-    %tr
-    %th= I18n.t('cpanel_setting.Value')
+  %tr
+    %th= I18n.t('cpanel_settings.value')
     %td= @cpanel_setting.value
-    %tr
-    %th= I18n.t('cpanel_setting.Summary')
+  %tr
+    %th= I18n.t('cpanel_settings.summary')
     %td= @cpanel_setting.summary
   
-= link_to I18n.t('common.edit'), edit_cpanel_setting_path(cpanel_setting)
+= link_to I18n.t('common.edit'), edit_cpanel_setting_path(@cpanel_setting)
 \|
 = link_to I18n.t('common.back'), cpanel_settings_path

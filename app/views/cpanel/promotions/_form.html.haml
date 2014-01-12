@@ -1,0 +1,39 @@
+= form_for(@cpanel_promotion, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @cpanel_promotion.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_promotion.errors.count)
+
+  .control-group{:class => ('error' unless @cpanel_promotion.errors[:title].empty?)}
+    = f.label :title, I18n.t('cpanel_promotions.title'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :title, :autofocus => true, :style => 'width:800px'
+      %span.help-inline= @cpanel_promotion.errors[:title].first unless @cpanel_promotion.errors[:title].empty?
+  .control-group{:class => ('error' unless @cpanel_promotion.errors[:url].empty?)}
+    = f.label :url, I18n.t('cpanel_promotions.url'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :url, :autofocus => true, :style => 'width:800px;'
+      %span.help-inline= @cpanel_promotion.errors[:url].first unless @cpanel_promotion.errors[:url].empty?
+  .control-group{:class => ('error' unless @cpanel_promotion.errors[:mall_id].empty?)}
+    = f.label :mall_id, I18n.t('cpanel_promotions.mall_id'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.number_field :mall_id, :autofocus => true
+      = f.select(:mall_id, Mall.all.order('id asc').map { |mall| ["#{mall.name}", mall.id] })
+      %span.help-inline= @cpanel_promotion.errors[:mall_id].first unless @cpanel_promotion.errors[:mall_id].empty?
+  .control-group{:class => ('error' unless @cpanel_promotion.errors[:content].empty?)}
+    = f.label :content, I18n.t('cpanel_promotions.content'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.text_area :content, :autofocus => true
+      /%span.help-inline= @cpanel_promotion.errors[:content].first unless @cpanel_promotion.errors[:content].empty?
+      = f.kindeditor :content, :window_onload => true
+      %span.help-inline= @cpanel_promotion.errors[:content].first unless @cpanel_promotion.errors[:content].empty?
+  .control-group{:class => ('error' unless @cpanel_promotion.errors[:order].empty?)}
+    = f.label :order, I18n.t('cpanel_promotions.order'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :order, :autofocus => true
+      %span.help-inline= @cpanel_promotion.errors[:order].first unless @cpanel_promotion.errors[:order].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_promotions.submit'), :class => 'btn btn-mini btn-success'

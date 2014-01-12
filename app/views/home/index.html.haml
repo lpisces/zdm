@@ -43,3 +43,5 @@
     .sales
       .head 打折促销
     .ads
+      - unless @ad_home_right_bottom.nil?
+        #ad_home_right_bottom{:style => "width:#{@ad_home_right_bottom.try(:width)};height:#{@ad_home_right_bottom.try(:height)}"}= @ad_home_right_bottom.try(:code).html_safe

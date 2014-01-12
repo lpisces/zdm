@@ -14,6 +14,7 @@ nav:
     {cname: '标签', controller: 'tags', link: '/cpanel/tags'}, 
     {cname: '商城', controller: 'malls', link: '/cpanel/malls'}, 
     {cname: '广告', controller: 'ads', link: '/cpanel/ads'}, 
+    {cname: '活动', controller: 'promotion', link: '/cpanel/promotions'}, 
   ]
 
 fnav:

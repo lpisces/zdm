@@ -18,7 +18,7 @@ class Cpanel::AdsControllerTest < ActionController::TestCase
 
   test "should create cpanel_ad" do
     assert_difference('Cpanel::Ad.count') do
-      post :create, cpanel_ad: { description: @cpanel_ad.description, height: @cpanel_ad.height, is_displayed: @cpanel_ad.is_displayed, position: @cpanel_ad.position, url: @cpanel_ad.url, width: @cpanel_ad.width }
+      post :create, cpanel_ad: { code: @cpanel_ad.code, description: @cpanel_ad.description, height: @cpanel_ad.height, is_displayed: @cpanel_ad.is_displayed, position: @cpanel_ad.position, width: @cpanel_ad.width }
     end
 
     assert_redirected_to cpanel_ad_path(assigns(:cpanel_ad))
@@ -35,7 +35,7 @@ class Cpanel::AdsControllerTest < ActionController::TestCase
   end
 
   test "should update cpanel_ad" do
-    patch :update, id: @cpanel_ad, cpanel_ad: { description: @cpanel_ad.description, height: @cpanel_ad.height, is_displayed: @cpanel_ad.is_displayed, position: @cpanel_ad.position, url: @cpanel_ad.url, width: @cpanel_ad.width }
+    patch :update, id: @cpanel_ad, cpanel_ad: { code: @cpanel_ad.code, description: @cpanel_ad.description, height: @cpanel_ad.height, is_displayed: @cpanel_ad.is_displayed, position: @cpanel_ad.position, width: @cpanel_ad.width }
     assert_redirected_to cpanel_ad_path(assigns(:cpanel_ad))
   end
 

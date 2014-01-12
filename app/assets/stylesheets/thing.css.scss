@@ -11,8 +11,12 @@
     margin:10px;
   }
   .content{
-    width:700px;
+    width:680px;
+    padding:10px;
     margin-top:50px;
+    height:600px;
+    overflow-y: auto;
+    overflow-x: hidden;
     img{
       overflow:hidden;
       max-width: 95%;
@@ -86,7 +90,7 @@
 
   .blocks{
     width:280px;
-    float:right;
+    margin-left:710px;
   
     .sales{
       border-top:4px solid #4b65c6;

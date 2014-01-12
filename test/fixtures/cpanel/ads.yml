@@ -4,7 +4,7 @@ one:
   position: MyString
   height: 1
   width: 1
-  url: MyText
+  code: MyText
   description: MyText
   is_displayed: false
 
@@ -12,6 +12,6 @@ two:
   position: MyString
   height: 1
   width: 1
-  url: MyText
+  code: MyText
   description: MyText
   is_displayed: false

@@ -1,2 +1,2 @@
-class Cpanel::Ad < ActiveRecord::Base
+class Cpanel::Ad < Ad
 end

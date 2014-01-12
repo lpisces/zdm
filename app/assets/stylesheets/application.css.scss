@@ -83,12 +83,12 @@ a:hover{
 
 .sidebar-wrap {
   position:fixed;
-  height: 300px;
-  width: 120px;
+  @include min-height(300px);
+  width: 150px;
   border-top:4px solid #4b65c6;
   background-color:#f6f6f6;
   float:left;
-  margin: 0 0 0 -130px;
+  margin: 0 0 0 -160px;
   padding: 0;
   .head{
     font-weight:normal;
@@ -118,7 +118,7 @@ a:hover{
 }
 
 .body{
-  @include min-height(5000px);
+  @include min-height(3000px);
   width:990px;
   margin:0 auto;
 }

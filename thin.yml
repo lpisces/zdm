@@ -1,5 +1,5 @@
 ---
-chdir: /home/ruby/august
+chdir: /home/ruby/zdm
 environment: development
 address: 0.0.0.0
 port: 3000

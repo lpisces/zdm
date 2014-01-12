@@ -18,14 +18,14 @@
     %th= I18n.t('cpanel_ads.width')
     %td= @cpanel_ad.width
   %tr
-    %th= I18n.t('cpanel_ads.url')
-    %td= @cpanel_ad.url
+    %th= I18n.t('cpanel_ads.code')
+    %td= @cpanel_ad.code
   %tr
     %th= I18n.t('cpanel_ads.description')
     %td= @cpanel_ad.description
   %tr
     %th= I18n.t('cpanel_ads.is_displayed')
-    %td= @cpanel_ad.is_displayed
+    %td= @cpanel_ad.is_displayed ? I18n.t('common.true') : I18n.t('common.false')
   
 = link_to I18n.t('common.edit'), edit_cpanel_ad_path(@cpanel_ad)
 \|

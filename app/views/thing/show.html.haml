@@ -40,6 +40,7 @@
     .sales
       .head 打折促销
     .ads
-      .head 广告
+      - unless @ad_thing_right_bottom.nil?
+        #ad_thing_right_bottom{:style => "width:#{@ad_thing_right_bottom.try(:width)};height:#{@ad_thing_right_bottom.try(:height)}"}= @ad_thing_right_bottom.try(:code).html_safe
 
 

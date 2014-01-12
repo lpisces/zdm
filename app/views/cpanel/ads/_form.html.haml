@@ -19,11 +19,11 @@
     .controls{:style => 'margin-left:100px;'}
       = f.number_field :width, :autofocus => true
       %span.help-inline= @cpanel_ad.errors[:width].first unless @cpanel_ad.errors[:width].empty?
-  .control-group{:class => ('error' unless @cpanel_ad.errors[:url].empty?)}
-    = f.label :url, I18n.t('cpanel_ads.url'), :class => 'control-label', :style => 'width:80px'
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:code].empty?)}
+    = f.label :code, I18n.t('cpanel_ads.code'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_area :url, :autofocus => true
-      %span.help-inline= @cpanel_ad.errors[:url].first unless @cpanel_ad.errors[:url].empty?
+      = f.text_area :code, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:code].first unless @cpanel_ad.errors[:code].empty?
   .control-group{:class => ('error' unless @cpanel_ad.errors[:description].empty?)}
     = f.label :description, I18n.t('cpanel_ads.description'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}

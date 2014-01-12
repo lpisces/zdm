@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112063828) do
+ActiveRecord::Schema.define(version: 20140112133939) do
+
+  create_table "ads", force: true do |t|
+    t.string   "position"
+    t.integer  "height"
+    t.integer  "width"
+    t.text     "code"
+    t.text     "description"
+    t.boolean  "is_displayed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "attachments", force: true do |t|
     t.string   "name"
@@ -24,11 +35,11 @@ ActiveRecord::Schema.define(version: 20140112063828) do
     t.string   "position"
     t.integer  "height"
     t.integer  "width"
-    t.text     "url"
     t.text     "description"
     t.boolean  "is_displayed"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "code"
   end
 
   create_table "cpanel_attachments", force: true do |t|
@@ -89,6 +100,16 @@ ActiveRecord::Schema.define(version: 20140112063828) do
     t.integer  "sort"
     t.string   "summary"
     t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotions", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "mall_id"
+    t.text     "content"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

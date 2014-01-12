@@ -66,8 +66,17 @@
     position: '位置'
     height: '高度'
     width: '宽度'
-    url: '链接'
+    code: '广告代码'
     description: '描述'
     is_displayed: '是否展示'
     submit: '保存'
+  cpanel_promotions:
+    title: '优惠活动'
+    url: '活动链接'
+    mall_id: '商家'
+    mall: '商家'
+    content: '内容'
+    order: '排序'
+    submit: '保存'
+    
     

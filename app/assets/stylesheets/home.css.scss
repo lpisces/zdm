@@ -99,7 +99,7 @@
         margin:20px 10px 10px 10px;
         a{
           font-size:14px;
-          width:56px;
+          width:64px;
           line-height:32px;
           display:block;
           float:left;
@@ -137,7 +137,6 @@
     }
 
     .ads{
-      border-top:4px solid #4b65c6;
       margin-top:10px;
       @include min-height(400px);
     }
