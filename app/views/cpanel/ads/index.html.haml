@@ -1,0 +1,30 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("cpanel_ads.title")
+
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('cpanel_ads.position')
+    %th= I18n.t('cpanel_ads.height')
+    %th= I18n.t('cpanel_ads.width')
+    %th= I18n.t('cpanel_ads.url')
+    %th= I18n.t('cpanel_ads.description')
+    %th= I18n.t('cpanel_ads.is_displayed')
+    %th
+
+  - @cpanel_ads.each do |cpanel_ad|
+    %tr
+      %td= cpanel_ad.position
+      %td= cpanel_ad.height
+      %td= cpanel_ad.width
+      %td= cpanel_ad.url
+      %td= cpanel_ad.description
+      %td= cpanel_ad.is_displayed
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_ad_path(cpanel_ad)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_ad, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
+
+= link_to I18n.t('common.new'), new_cpanel_ad_path

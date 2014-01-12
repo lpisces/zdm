@@ -1,0 +1,25 @@
+.section-wrapper
+  .breadcrumb
+    %a{:href => '/'}= I18n.t('homepage')
+    &gt;
+    %span= @section.try(:name)
+
+  .nodes
+    - @section.nodes.each do |n|
+      - if n.try(:id) == @node.try(:id)
+        %a.node.active{:href => "/section/#{@section.try(:name)}/node/#{n.try(:name)}"}= n.try(:name)
+      - else
+        %a.node{:href => "/section/#{@section.try(:name)}/node/#{n.try(:name)}"}= n.try(:name)
+
+  .things
+    - @things.each do |thing|
+      .thing
+        .thumb
+          %img{:src => thing.master_pic_url} 
+        .title
+          %a{:href => '#'}= thing.title
+        /.info= thing.summary
+        .prices
+          %span.coupon_price= thing.coupon_price
+          %span.price &yen;100
+          %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe

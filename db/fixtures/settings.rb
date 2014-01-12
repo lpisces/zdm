@@ -1,10 +1,10 @@
 # encoding : utf-8
 
-#User.seed do |s|
-#  s.email = 'iamalazyrat@gmail.com'
-#  s.admin = true
-#  s.password = '123456'
-#end
+User.seed do |s|
+  s.email = 'iamalazyrat@gmail.com'
+  s.admin = true
+  s.password = '123456'
+end
 
 Cpanel::Setting.seed do |s|
   s.id    = 1
@@ -32,6 +32,13 @@ Cpanel::Setting.seed do |s|
   s.name = "title"
   s.value = "就是值得买"
   s.summary  = "网站标题"
+end
+
+Cpanel::Section.seed do |s|
+  s.id = 11
+  s.name = '时间线'
+  s.sort = 11
+  s.summary = '时间线'
 end
 
 Cpanel::Section.seed do |s|
@@ -318,4 +325,9 @@ Cpanel::Node.seed do |s|
   s.name = '家具饰品'
   s.sort = 2
   s.summary = '家具饰品'
+end
+
+Cpanel::Tag.seed do |s|
+  s.name = '测试'
+  s.section_id = 11
 end

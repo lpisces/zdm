@@ -1,0 +1,14 @@
+.section-map-wrapper
+  .breadcrumb
+    %a{:href => '/'}= I18n.t('homepage')
+    &gt;
+    %span= I18n.t('sections')
+
+  .sections
+    - Section.all.each do |s|
+      .section
+        .head
+          %a{:href => "/section/#{s.name}"}= s.name
+        .nodes
+          - s.nodes.each do |n|
+            %a.node{:href => "/section/#{s.name}/node/#{n.name}"}= n.name

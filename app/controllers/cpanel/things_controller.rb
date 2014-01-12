@@ -78,6 +78,6 @@ class Cpanel::ThingsController < CpanelController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cpanel_thing_params
-      params.require(:cpanel_thing).permit(:title, :price, :coupon_price, :master_pic_url, :sub_pic_url, :click_url, :node_id)
+      params.require(:cpanel_thing).permit(:title, :price, :coupon_price, :master_pic_url, :sub_pic_url, :click_url, :node_id, :summary, :content, :sub_title, :mall_id)
     end
 end

@@ -28,6 +28,9 @@ gem 'seed-fu', github: 'mbleigh/seed-fu'
 #模板
 gem "haml-rails"
 
+#按钮
+gem "fancy-buttons"
+
 #auth
 gem 'devise'
 

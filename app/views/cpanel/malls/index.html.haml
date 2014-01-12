@@ -1,0 +1,28 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("cpanel_malls.title")
+
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th{:style => 'width:160px;'}= I18n.t('cpanel_malls.name')
+    /%th= I18n.t('cpanel_malls.url')
+    %th= I18n.t('cpanel_malls.logo_url')
+    %th= I18n.t('cpanel_malls.mall_type')
+    %th
+
+  - @cpanel_malls.each do |cpanel_mall|
+    %tr
+      %td
+        %a{:href => cpanel_mall.url, :target => '_blank'}= cpanel_mall.name
+      /%td= cpanel_mall.url
+      %td
+        %img{:src => cpanel_mall.logo_url, :style => 'width:80px;'}
+      %td= cpanel_mall.mall_type
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_mall_path(cpanel_mall)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_mall, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
+
+= link_to I18n.t('common.new'), new_cpanel_mall_path

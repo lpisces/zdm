@@ -1,0 +1,26 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li
+    %a{:href => cpanel_malls_path}= I18n.t("cpanel_malls.title")
+    %span.divider /
+  %li.active= I18n.t('common.show')
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('cpanel_malls.name')
+    %td= @cpanel_mall.name
+  %tr
+    %th= I18n.t('cpanel_malls.url')
+    %td= @cpanel_mall.url
+  %tr
+    %th= I18n.t('cpanel_malls.logo_url')
+    %td= @cpanel_mall.logo_url
+  %tr
+    %th= I18n.t('cpanel_malls.mall_type')
+    %td= @cpanel_mall.mall_type
+  
+= link_to I18n.t('common.edit'), edit_cpanel_mall_path(@cpanel_mall)
+\|
+= link_to I18n.t('common.back'), cpanel_malls_path

@@ -1,12 +1,26 @@
 @import 'typo';
 @import 'font-awesome';
 @import "compass/utilities/general/min";
+@import 'fancy-buttons';
 a, a:hover{
   text-decoration: none;
 }
 
 a:hover{
   color: #cc6600;
+}
+
+.breadcrumb{
+  border-left: 4px solid #c9c9c9;
+  background-color:#f6f6f6;
+  margin:10px 0 0 0;
+  padding:5px;
+  color:#ccc;
+  a{
+    font-size:14px;
+    margin: 0 5px;
+    color:#444;
+  }
 }
 
 .header{
@@ -68,6 +82,7 @@ a:hover{
 }
 
 .sidebar-wrap {
+  position:fixed;
   height: 300px;
   width: 120px;
   border-top:4px solid #4b65c6;
@@ -80,6 +95,9 @@ a:hover{
     font-size:18px;
     color:#444;
     margin:10px;
+    a{
+      color:#444;
+    }
   }
   .sections{
     margin-left: 10px;
@@ -91,6 +109,7 @@ a:hover{
       padding:2px 4px;
       color:#444;
     }
+    a.active,
     a.section:hover{
       background-color:#fff;
       color:#cc6600;
@@ -99,7 +118,7 @@ a:hover{
 }
 
 .body{
-  @include min-height(2500px);
+  @include min-height(5000px);
   width:990px;
   margin:0 auto;
 }
@@ -120,3 +139,4 @@ a:hover{
  
 @import 'home';
 @import 'section';
+@import 'thing';

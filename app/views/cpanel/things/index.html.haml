@@ -6,10 +6,10 @@
 
 %table.table.table-condensed.table-bordered.table-hover
   %tr
+    %th= I18n.t('cpanel_things.master_pic_url')
     %th= I18n.t('cpanel_things.title')
     %th= I18n.t('cpanel_things.price')
     %th= I18n.t('cpanel_things.coupon_price')
-    %th= I18n.t('cpanel_things.master_pic_url')
     //%th= I18n.t('cpanel_things.sub_pic_url')
     %th= I18n.t('cpanel_things.click_url')
     %th= I18n.t('cpanel_things.node')
@@ -17,13 +17,14 @@
 
   - @cpanel_things.each do |cpanel_thing|
     %tr
+      %td
+        %img{:src => cpanel_thing.master_pic_url, :style => 'width:100px;'}
+      //%td= cpanel_thing.sub_pic_url
       %td= cpanel_thing.title
       %td= cpanel_thing.price
       %td= cpanel_thing.coupon_price
       %td
-        %img{:src => cpanel_thing.master_pic_url, :style => 'width:100px;'}
-      //%td= cpanel_thing.sub_pic_url
-      %td= cpanel_thing.click_url
+        %a{:href => cpanel_thing.click_url, :target => '_blank'} 链接
       %td= "#{cpanel_thing.node.section.name} / #{cpanel_thing.node.name}"
       %td
         = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_thing_path(cpanel_thing)

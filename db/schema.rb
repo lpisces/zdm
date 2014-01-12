@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130091110) do
+ActiveRecord::Schema.define(version: 20140112063828) do
 
   create_table "attachments", force: true do |t|
     t.string   "name"
     t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cpanel_ads", force: true do |t|
+    t.string   "position"
+    t.integer  "height"
+    t.integer  "width"
+    t.text     "url"
+    t.text     "description"
+    t.boolean  "is_displayed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,10 +67,19 @@ ActiveRecord::Schema.define(version: 20131130091110) do
     t.string   "title"
     t.decimal  "price",          precision: 10, scale: 0
     t.decimal  "coupon_price",   precision: 10, scale: 0
-    t.string   "master_pic_url"
+    t.text     "master_pic_url"
     t.text     "sub_pic_url"
-    t.string   "click_url"
+    t.text     "click_url"
     t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "malls", force: true do |t|
+    t.string   "name"
+    t.text     "url"
+    t.text     "logo_url"
+    t.string   "mall_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,16 +109,27 @@ ActiveRecord::Schema.define(version: 20131130091110) do
     t.datetime "updated_at"
   end
 
+  create_table "tags", force: true do |t|
+    t.text     "name"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "things", force: true do |t|
     t.string   "title"
     t.decimal  "price",          precision: 10, scale: 0
     t.decimal  "coupon_price",   precision: 10, scale: 0
-    t.string   "master_pic_url"
-    t.text     "sub_pic_url"
-    t.string   "click_url"
     t.integer  "node_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sub_title"
+    t.text     "summary"
+    t.text     "content"
+    t.text     "master_pic_url"
+    t.text     "sub_pic_url"
+    t.text     "click_url"
+    t.integer  "mall_id"
   end
 
   create_table "users", force: true do |t|

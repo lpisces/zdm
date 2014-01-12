@@ -11,28 +11,42 @@
   %tr
     %th{:style => 'width:80px;'}= I18n.t('cpanel_things.title')
     %td= @cpanel_thing.title
-    %tr
+  %tr
+    %th{:style => 'width:80px;'}= I18n.t('cpanel_things.sub_title')
+    %td= @cpanel_thing.sub_title
+  %tr
+    %th{:style => 'width:80px;'}= I18n.t('cpanel_things.content')
+    %td= @cpanel_thing.content.html_safe
+  %tr
+    %th{:style => 'width:80px;'}= I18n.t('cpanel_things.summary')
+    %td= @cpanel_thing.summary
+  %tr
     %th= I18n.t('cpanel_things.price')
     %td= @cpanel_thing.price
-    %tr
+  %tr
     %th= I18n.t('cpanel_things.coupon_price')
     %td= @cpanel_thing.coupon_price
-    %tr
+  %tr
     %th= I18n.t('cpanel_things.master_pic_url')
     %td
-      %img.img-rounded{:src => @cpanel_thing.master_pic_url, :style => 'margin:5px;'}
-    %tr
+      %img.img-rounded{:src => @cpanel_thing.master_pic_url, :style => 'margin:5px;width:300px;'}
+  %tr
     %th= I18n.t('cpanel_things.sub_pic_url')
     %td
       - @cpanel_thing.sub_pic_url.split("\n").each do |p|
         %img.img-rounded.pull-left{:src => p, :style => 'margin:5px;'}
-    %tr
+  %tr
     %th= I18n.t('cpanel_things.click_url')
-    %td= @cpanel_thing.click_url
-    %tr
+    %td
+      %a{:target => '_blank', :href => @cpanel_thing.click_url} 猛击我
+  %tr
     %th= I18n.t('cpanel_things.node')
-    /%td= @cpanel_thing.node_id
     %td= "#{@cpanel_thing.node.section.name} / #{@cpanel_thing.node.name}"
+
+  %tr
+    %th= I18n.t('cpanel_things.mall')
+    %td= "#{@cpanel_thing.mall.try(:name)}"
+    
   
 = link_to I18n.t('common.edit'), edit_cpanel_thing_path(@cpanel_thing)
 \|

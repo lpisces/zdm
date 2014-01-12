@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require sidebar-follow-jquery
+//= require jquery.wookmark
 //= require jquery_ujs
 //= require turbolinks
 //= require home

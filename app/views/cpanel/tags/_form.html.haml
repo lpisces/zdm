@@ -1,0 +1,22 @@
+= form_for(@cpanel_tag, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @cpanel_tag.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_tag.errors.count)
+
+  .control-group{:class => ('error' unless @cpanel_tag.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_tags.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_area :name, :autofocus => true
+      %span.help-inline= @cpanel_tag.errors[:name].first unless @cpanel_tag.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_tag.errors[:section_id].empty?)}
+    = f.label :section_id, I18n.t('cpanel_tags.section_id'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.number_field :section_id, :autofocus => true
+      = f.select(:section_id, Cpanel::Section.all.map { |section| [section.name, section.id] })
+      %span.help-inline= @cpanel_tag.errors[:section_id].first unless @cpanel_tag.errors[:section_id].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_tags.submit'), :class => 'btn btn-mini btn-success'

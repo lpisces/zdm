@@ -20,38 +20,42 @@
 
   .nodes{
     background-color:#f6f6f6;
-    height: 80px;
     margin-top:10px;
-    padding:0 5px;
+    padding:10px;
     a.node{
       font-size:14px;
       margin: 0 5px;
+      color:#444;
     }
-    a.active{
-      color: #cc6600;
+    a.active,
+    a.node:hover{
+      background-color:#fff;
+      color:#cc6600;
     }
   }
 
   .things{
-    width:1000px;
+    position: relative;
+    width:990px;
     margin-top:10px;
     .thing{
+      display:none;
       background-color:#f6f6f6;
+      @include min-height(200px);
       float:left;
-      width:323px;
+      width:240px;
       height:400px;
-      margin-right:10px;
-      margin-bottom:10px;
       .thumb img{
-        width:300px;
+        width:230px;
         margin:0 auto;
         display:block;
-        margin-top:10px;
+        margin-top:5px;
       }
       .title{
         margin:10px;
         a{
           font-size:16px;
+          color:#444;
         }
       }
       .info{
@@ -60,8 +64,7 @@
       .prices{
         margin:10px;
         span.coupon_price{
-          font-size:24px;
-          font-weight:bold;
+          font-size:14px;
           color:#cc6600;
         }
         span.price{
@@ -69,10 +72,38 @@
         }
         a.link{
           float:right;
-          line-height:43px;
+          line-height:21px;
+          font-size:14px;
+          color:#3ba354;
         }
       }
     }
   }
 }
 
+.section-map-wrapper{
+
+  .head{
+    font-weight:normal;
+    font-size:18px;
+    color:#444;
+    margin:10px;
+  }
+
+  .sections{
+    .section{
+      border: 1px solid #f6f6f6;
+      margin-top:10px;
+      padding-bottom:10px;
+      a{
+        color:#444;
+      }
+      a:hover{
+        color:#cc6600;
+      }
+      a.node{
+        padding:10px;
+      }
+    }
+  }
+}

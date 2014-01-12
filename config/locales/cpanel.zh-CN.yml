@@ -3,6 +3,7 @@
     title: '前台'
   cpanel:
     title: '后 台'
+  timeline: '时间线'
   cpanel_settings:
     title: '系统设置'
     name: '名称'
@@ -27,7 +28,11 @@
     submit: '保 存'
 
   cpanel_things:
+    master_title: '主标题'
     title: '物品'
+    sub_title: '副标题'
+    summary: '简介'
+    content: '推荐理由'
     thing_title: '名称'
     price: '原价'
     coupon_price: '折扣价'
@@ -36,11 +41,33 @@
     sub_pic_url: '副图'
     node_id: '节点'
     node: '节点'
+    mall: '商城'
     submit: '保存'
   cpanel_attachments:
     title: '附件'
     name: '名称'
     file: '文件路径'
     submit: '保存'
-
-
+  cpanel_tags:
+    title: 'Tags'
+    name: '名称'
+    section: '分类'
+    section_id: '分类'
+    submit: '保存'
+  cpanel_malls:
+    title: '商城'
+    name: '名称'
+    mall_type: '类型'
+    url: '链接'
+    logo_url: 'logo'
+    submit: '保存'
+  cpanel_ads:
+    title: '广告'
+    position: '位置'
+    height: '高度'
+    width: '宽度'
+    url: '链接'
+    description: '描述'
+    is_displayed: '是否展示'
+    submit: '保存'
+    

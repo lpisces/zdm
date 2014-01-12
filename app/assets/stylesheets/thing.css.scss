@@ -1,0 +1,97 @@
+.thing-wrapper{
+  .head{
+    font-weight:normal;
+    font-size:18px;
+    color:#444;
+    margin:10px;
+  }
+  .comments{
+    float:left;
+    width:680px;
+    margin:10px;
+  }
+  .content{
+    width:700px;
+    margin-top:50px;
+    img{
+      overflow:hidden;
+      max-width: 95%;
+    }
+  }
+  .thing{
+    width:700px;
+    float:left;
+    margin-top:10px;
+    border:1px solid #f6f6f6;
+    @include min-height(280px);
+    position:relative;
+    .block-1{
+      width:450px;
+      margin:10px;
+      @include min-height(200px);
+      .head{
+        color:#444;
+        margin:0 10px 10px 0;
+        a{
+          color:#444;
+          span.sub{
+            color:#cc6600;
+          }
+        }
+      }
+      .node{
+        margin:-5px 0 20px 0;
+        a{
+          color:#444;
+        }
+        color:#ccc;
+      }
+      .info{
+        margin-top:-10px;
+        font-size:14px;
+      }
+      .source{
+        margin-top:10px;
+        font-size:14px;
+      }
+      .price{
+        line-height:40px;
+        font-size:14px;
+        color:#cc6600;
+      }
+    }
+
+    .block-2{
+      position:absolute;
+      right:10px;
+      top:0px;
+      .thumb img{
+        margin-top:10px;
+        width:200px;
+        height:200px;
+      }
+      .link{
+        a{
+          margin:10px auto;
+          display:block;
+          font-weight:bold;
+          color:#3ba354;
+          width:80px;
+          @include fancy-button(#3ba354, 14px);
+          text-align:center;
+        }
+      }
+    }
+  }
+
+  .blocks{
+    width:280px;
+    float:right;
+  
+    .sales{
+      border-top:4px solid #4b65c6;
+      margin-top:10px;
+      @include min-height(400px);
+    }
+  }
+}

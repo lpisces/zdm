@@ -1,0 +1,45 @@
+.thing-wrapper
+  .breadcrumb
+    %a{:href => '/'}= I18n.t('homepage')
+    &gt;
+    %a{:href => "/section/#{@section.try(:name)}"}= @section.try(:name)
+    &gt;
+    %a{:href => "/section/#{@section.try(:name)}/node/#{@node.try(:name)}"}= @node.try(:name)
+    &gt;
+    %span= @thing.try(:title)
+
+  .thing
+    .block-1
+      .head 
+        %a{:href => "/thing/#{@thing.title}"}
+          %span.title= @thing.title
+          %span.sub= @thing.sub_title
+      .node
+        %span 分类:&nbsp; 
+        %a{:href => "/section/#{@thing.node.section.name}"}= "#{@thing.node.section.name}"
+        \/
+        %a{:href => "/section/#{@thing.node.section.name}/node/#{@thing.node.name}"}= "#{@thing.node.name}"
+      .info= @thing.summary.html_safe
+      .source 
+        %span.time= @thing.created_at.strftime('%Y-%m-%d %H:%M')
+        %span.site 来源:
+        %a.site{:href => "/mall/#{@thing.mall.try(:name)}"}= @thing.mall.try(:name)
+        %span 价格: 
+        %span.price= "&yen#{@thing.coupon_price}".html_safe
+    .block-2
+      .thumb
+        %img{:src => @thing.master_pic_url}
+      .link
+        %a{:href => @thing.click_url, :target => '_blank'}= '<i class="icon-shopping-cart"></i> 购买链接'.html_safe
+    .content= @thing.content.html_safe
+    .comments
+      #uyan_frame
+      %script{:src => "http://v2.uyan.cc/code/uyan.js?uid=1887104", :type => "text/javascript"}
+
+  .blocks
+    .sales
+      .head 打折促销
+    .ads
+      .head 广告
+
+

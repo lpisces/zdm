@@ -1,6 +1,10 @@
 .sidebar-wrap
-  .head 商品分类
+  .head 
+    %a{:href => "/sections"}= I18n.t('sections')
 
   .sections
     - Section.all.each do |s|
-      %a.section{:href => "/section/#{s.name}"}= s.name
+      - if !@section.nil? and s.id == @section.try(:id)
+        %a.active.section{:href => "/section/#{s.name}"}= s.name
+      - else
+        %a.section{:href => "/section/#{s.name}"}= s.name

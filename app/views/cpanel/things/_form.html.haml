@@ -5,36 +5,52 @@
       = I18n.t('errors.messages.not_saved', count: @cpanel_thing.errors.count)
 
   .control-group{:class => ('error' unless @cpanel_thing.errors[:title].empty?)}
-    = f.label :title, I18n.t('cpanel_things.title'), :class => 'control-label', :style => 'width:80px'
+    = f.label :title, I18n.t('cpanel_things.master_title'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_field :title, :autofocus => true, :style => 'width:400px;'
+      = f.text_field :title, :autofocus => true, :style => 'width:800px;'
       %span.help-inline= @cpanel_thing.errors[:title].first unless @cpanel_thing.errors[:title].empty?
+  .control-group{:class => ('error' unless @cpanel_thing.errors[:sub_title].empty?)}
+    = f.label :sub_title, I18n.t('cpanel_things.sub_title'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :sub_title, :style => 'width:800px;'
+      %span.help-inline= @cpanel_thing.errors[:sub_title].first unless @cpanel_thing.errors[:sub_title].empty?
+  .control-group{:class => ('error' unless @cpanel_thing.errors[:summary].empty?)}
+    = f.label :summary, I18n.t('cpanel_things.summary'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_area :summary, :style => 'width:800px;height:100px;'
+      %span.help-inline= @cpanel_thing.errors[:summary].first unless @cpanel_thing.errors[:summary].empty?
+  .control-group{:class => ('error' unless @cpanel_thing.errors[:content].empty?)}
+    = f.label :content, I18n.t('cpanel_things.content'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.text_area :content, :style => 'width:800px;height:200px;'
+      = f.kindeditor :content, :window_onload => true
+      %span.help-inline= @cpanel_thing.errors[:content].first unless @cpanel_thing.errors[:content].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:price].empty?)}
     = f.label :price, I18n.t('cpanel_things.price'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_field :price, :style => 'width:400px;'
+      = f.text_field :price, :style => 'width:800px;'
       %span.help-inline= @cpanel_thing.errors[:price].first unless @cpanel_thing.errors[:price].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:coupon_price].empty?)}
     = f.label :coupon_price, I18n.t('cpanel_things.coupon_price'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_field :coupon_price, :style => 'width:400px;'
+      = f.text_field :coupon_price, :style => 'width:800px;'
       %span.help-inline= @cpanel_thing.errors[:coupon_price].first unless @cpanel_thing.errors[:coupon_price].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:master_pic_url].empty?)}
     = f.label :master_pic_url, I18n.t('cpanel_things.master_pic_url'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_field :master_pic_url, :style => 'width:400px;'
+      = f.text_field :master_pic_url, :style => 'width:800px;'
       %input#master_pic{:name => 'attachment', :type => "file"}
       %span.help-inline= @cpanel_thing.errors[:master_pic_url].first unless @cpanel_thing.errors[:master_pic_url].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:sub_pic_url].empty?)}
     = f.label :sub_pic_url, I18n.t('cpanel_things.sub_pic_url'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_area :sub_pic_url, :style => 'width:400px;height:200px;'
+      = f.text_area :sub_pic_url, :style => 'width:800px;height:200px;'
       %input#sub_pic{:name => 'attachment', :type => "file"}
       %span.help-inline= @cpanel_thing.errors[:sub_pic_url].first unless @cpanel_thing.errors[:sub_pic_url].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:click_url].empty?)}
     = f.label :click_url, I18n.t('cpanel_things.click_url'), :class => 'control-label', :style => 'width:80px'
     .controls{:style => 'margin-left:100px;'}
-      = f.text_field :click_url, :style => 'width:400px;'
+      = f.text_field :click_url, :style => 'width:800px;'
       %span.help-inline= @cpanel_thing.errors[:click_url].first unless @cpanel_thing.errors[:click_url].empty?
   .control-group{:class => ('error' unless @cpanel_thing.errors[:node_id].empty?)}
     = f.label :node_id, I18n.t('cpanel_things.node_id'), :class => 'control-label', :style => 'width:80px'
@@ -43,7 +59,14 @@
       = f.select(:node_id, Node.all.order('section_id asc').map { |node| ["#{node.section.name} / #{node.name}", node.id] })
       %span.help-inline= @cpanel_thing.errors[:node_id].first unless @cpanel_thing.errors[:node_id].empty?
 
+  .control-group{:class => ('error' unless @cpanel_thing.errors[:mall_id].empty?)}
+    = f.label :mall_id, I18n.t('cpanel_things.mall'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      //= f.number_field :mall, :autofocus => true
+      = f.select(:mall_id, Mall.all.order('id asc').map { |mall| ["#{mall.name}", mall.id] })
+      %span.help-inline= @cpanel_thing.errors[:mall_id].first unless @cpanel_thing.errors[:mall_id].empty?
 
   .control-group
     .controls{:style => 'margin-left:100px;'}
       = f.submit I18n.t('cpanel_things.submit'), :class => 'btn btn-mini btn-success'
+

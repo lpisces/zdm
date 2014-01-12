@@ -1,167 +1,22 @@
 .section-wrapper
   .breadcrumb
-    %a{:href => '#'} 首页
+    %a{:href => '/'}= I18n.t('homepage')
     &gt;
-    %a{:href => '#'} 分类1
+    %span= @section.try(:name)
 
   .nodes
-    %a.node{:href => '#'} 节点
-    %a.node{:href => '#'} 节点
-    %a.node{:href => '#'} 节点
-    %a.node.active{:href => '#'} 节点
-    %a.node{:href => '#'} 节点
-    %a.node{:href => '#'} 节点
-    %a.node{:href => '#'} 节点
+    - @section.nodes.each do |n|
+      %a.node{:href => "/section/#{@section.try(:name)}/node/#{n.try(:name)}"}= n.try(:name)
 
   .things
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
-    .thing
-      .thumb
-        %img{:src => 'http://192.168.1.105:3000/uploads/attachments/131130/normal_49e7e67196828187c223aacfc0f0f7bc.jpg'} 
-      .title
-        %a{:href => '#'} 这里是标题
-      .info 这这里是商品信这里是商品信这里是商品信这里是商品信这里是商品信里是商品信息
-      .prices
-        %span.coupon_price &yen;50
-        %span.price &yen;100
-        %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe
+    - @things.each do |thing|
+      .thing
+        .thumb
+          %img{:src => thing.master_pic_url} 
+        .title
+          %a{:href => '#'}= thing.title
+        /.info= thing.summary
+        .prices
+          %span.coupon_price= thing.coupon_price
+          %span.price &yen;100
+          %a.link{:href => '#'}= '去看看 <i class="icon-eye-open"></i>'.html_safe

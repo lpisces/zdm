@@ -1,0 +1,41 @@
+= form_for(@cpanel_ad, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @cpanel_ad.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_ad.errors.count)
+
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:position].empty?)}
+    = f.label :position, I18n.t('cpanel_ads.position'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :position, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:position].first unless @cpanel_ad.errors[:position].empty?
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:height].empty?)}
+    = f.label :height, I18n.t('cpanel_ads.height'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :height, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:height].first unless @cpanel_ad.errors[:height].empty?
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:width].empty?)}
+    = f.label :width, I18n.t('cpanel_ads.width'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.number_field :width, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:width].first unless @cpanel_ad.errors[:width].empty?
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:url].empty?)}
+    = f.label :url, I18n.t('cpanel_ads.url'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_area :url, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:url].first unless @cpanel_ad.errors[:url].empty?
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:description].empty?)}
+    = f.label :description, I18n.t('cpanel_ads.description'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_area :description, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:description].first unless @cpanel_ad.errors[:description].empty?
+  .control-group{:class => ('error' unless @cpanel_ad.errors[:is_displayed].empty?)}
+    = f.label :is_displayed, I18n.t('cpanel_ads.is_displayed'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.check_box :is_displayed, :autofocus => true
+      %span.help-inline= @cpanel_ad.errors[:is_displayed].first unless @cpanel_ad.errors[:is_displayed].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_ads.submit'), :class => 'btn btn-mini btn-success'

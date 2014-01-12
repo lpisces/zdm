@@ -1,0 +1,32 @@
+= form_for(@cpanel_mall, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @cpanel_mall.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_mall.errors.count)
+
+  .control-group{:class => ('error' unless @cpanel_mall.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_malls.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @cpanel_mall.errors[:name].first unless @cpanel_mall.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_mall.errors[:url].empty?)}
+    = f.label :url, I18n.t('cpanel_malls.url'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :url, :style => 'width:800px;'
+      %span.help-inline= @cpanel_mall.errors[:url].first unless @cpanel_mall.errors[:url].empty?
+  .control-group{:class => ('error' unless @cpanel_mall.errors[:logo_url].empty?)}
+    = f.label :logo_url, I18n.t('cpanel_malls.logo_url'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :logo_url, :style => 'width:800px;'
+      %input#mall_logo{:name => 'attachment', :type => "file"}
+      %span.help-inline= @cpanel_mall.errors[:logo_url].first unless @cpanel_mall.errors[:logo_url].empty?
+  .control-group{:class => ('error' unless @cpanel_mall.errors[:mall_type].empty?)}
+    = f.label :mall_type, I18n.t('cpanel_malls.mall_type'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :mall_type, :autofocus => true
+      %span.help-inline= @cpanel_mall.errors[:mall_type].first unless @cpanel_mall.errors[:mall_type].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_malls.submit'), :class => 'btn btn-mini btn-success'

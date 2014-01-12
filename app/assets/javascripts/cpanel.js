@@ -1,6 +1,6 @@
 //= require jquery
-//=require jquery-fileupload/basic
 //= require jquery_ujs
+//= require jquery-fileupload/basic
 //= require turbolinks
 //= require kindeditor
 //= require bootstrap

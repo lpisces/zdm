@@ -11,6 +11,9 @@ nav:
     {cname: '节点', controller: 'nodes', link: '/cpanel/nodes'}, 
     {cname: '物品', controller: 'things', link: '/cpanel/things'}, 
     {cname: '附件', controller: 'attachments', link: '/cpanel/attachments'}, 
+    {cname: '标签', controller: 'tags', link: '/cpanel/tags'}, 
+    {cname: '商城', controller: 'malls', link: '/cpanel/malls'}, 
+    {cname: '广告', controller: 'ads', link: '/cpanel/ads'}, 
   ]
 
 fnav:
