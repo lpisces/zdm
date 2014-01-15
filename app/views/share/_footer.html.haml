@@ -1,7 +1,7 @@
 .wrapper
-  .copyright= "&copy; 2013 &nbsp;|&nbsp;All rights reserved.".html_safe
+  .copyright= "#{Setting.find_by_name('site_name').try(:value)} &copy; 2013 &nbsp;|&nbsp;All rights reserved.".html_safe
   .links
-    %a{:href => '#'} 关于我们
-    %a{:href => '#'} 联系我们
+    %a{:href => '/about'}= I18n.t('about')
+    %a{:href => '/contact'}= I18n.t('contact')
 
 = javascript_include_tag "application"

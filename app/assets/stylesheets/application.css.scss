@@ -77,6 +77,12 @@ a:hover{
       float:right;
       height:40px;
       line-height:40px;
+      a{
+        color:#444;
+      }
+      a:hover{
+        color:#cc6600;
+      }
     }
   }
 }
@@ -134,9 +140,23 @@ a:hover{
       float:right;
       color: #444;
     }
+    .links{
+      a{
+        font-size:14px;
+        float:right;
+        padding:0px 4px;
+        color:#444;
+      }
+      a:hover{
+        background-color:#fff;
+        color:#cc6600;
+      }
+    }
   }
 }
  
 @import 'home';
 @import 'section';
 @import 'thing';
+@import 'about';
+@import 'contact';

@@ -1,8 +1,8 @@
 .home-wrapper
   .breadcrumb
-    %a{:href => '#'}= I18n.t('homepage')
+    %a{:href => '/'}= I18n.t('homepage')
     &gt;
-    %a{:href => '#'}= I18n.t('timeline')
+    %span= I18n.t('timeline')
   .things
     - @things.each do |thing|
       .thing

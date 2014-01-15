@@ -78,5 +78,10 @@
     content: '内容'
     order: '排序'
     submit: '保存'
+  cpanel_pages:
+    title: '页面'
+    name: '页面名称'
+    content: '内容'
+    submit: '保存'
     
     

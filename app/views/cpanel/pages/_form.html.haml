@@ -1,0 +1,22 @@
+= form_for(@cpanel_page, :html => {:class => 'form-horizontal'} ) do |f|
+  - if @cpanel_page.errors.any?
+    .alert.alert-error
+      %button.close{"data-dismiss" => "alert", :type => "button"} x
+      = I18n.t('errors.messages.not_saved', count: @cpanel_page.errors.count)
+
+  .control-group{:class => ('error' unless @cpanel_page.errors[:name].empty?)}
+    = f.label :name, I18n.t('cpanel_pages.name'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      = f.text_field :name, :autofocus => true
+      %span.help-inline= @cpanel_page.errors[:name].first unless @cpanel_page.errors[:name].empty?
+  .control-group{:class => ('error' unless @cpanel_page.errors[:content].empty?)}
+    = f.label :content, I18n.t('cpanel_pages.content'), :class => 'control-label', :style => 'width:80px'
+    .controls{:style => 'margin-left:100px;'}
+      /= f.text_area :content, :autofocus => true
+      = f.kindeditor :content, :window_onload => true
+      %span.help-inline= @cpanel_page.errors[:content].first unless @cpanel_page.errors[:content].empty?
+
+
+  .control-group
+    .controls{:style => 'margin-left:100px;'}
+      = f.submit I18n.t('cpanel_pages.submit'), :class => 'btn btn-mini btn-success'

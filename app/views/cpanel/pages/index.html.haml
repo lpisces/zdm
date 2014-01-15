@@ -1,0 +1,22 @@
+%ul.breadcrumb
+  %li
+    %a{:href => "/cpanel"}= I18n.t('cpanel.title')
+    %span.divider /
+  %li.active= I18n.t("cpanel_pages.title")
+
+
+%table.table.table-condensed.table-bordered.table-hover
+  %tr
+    %th= I18n.t('cpanel_pages.name')
+    %th= I18n.t('cpanel_pages.content')
+    %th
+
+  - @cpanel_pages.each do |cpanel_page|
+    %tr
+      %td= cpanel_page.name
+      %td= cpanel_page.content
+      %td
+        = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_page_path(cpanel_page)
+        = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_page, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
+
+= link_to I18n.t('common.new'), new_cpanel_page_path

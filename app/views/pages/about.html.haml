@@ -1,0 +1,7 @@
+.about-wrapper
+  .breadcrumb
+    %a{:href => '/'}= I18n.t('homepage')
+    &gt;
+    %span=I18n.t('about')
+
+  .content= @page.content.html_safe

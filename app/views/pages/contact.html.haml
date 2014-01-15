@@ -1,0 +1,7 @@
+.contact-wrapper
+  .breadcrumb
+    %a{:href => '/'}= I18n.t('homepage')
+    &gt;
+    %span=I18n.t('contact')
+
+  .content= @page.content.html_safe

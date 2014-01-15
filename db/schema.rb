@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112133939) do
+ActiveRecord::Schema.define(version: 20140115203921) do
 
   create_table "ads", force: true do |t|
     t.string   "position"
@@ -100,6 +100,13 @@ ActiveRecord::Schema.define(version: 20140112133939) do
     t.integer  "sort"
     t.string   "summary"
     t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
