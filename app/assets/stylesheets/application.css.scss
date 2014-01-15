@@ -85,8 +85,8 @@ a:hover{
   position:fixed;
   @include min-height(300px);
   width: 150px;
+  border:1px solid #f6f6f6;
   border-top:4px solid #4b65c6;
-  background-color:#f6f6f6;
   float:left;
   margin: 0 0 0 -160px;
   padding: 0;
@@ -118,7 +118,7 @@ a:hover{
 }
 
 .body{
-  @include min-height(3000px);
+  @include min-height(3500px);
   width:990px;
   margin:0 auto;
 }

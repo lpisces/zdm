@@ -28,20 +28,25 @@
             %img{:src => thing.master_pic_url}
           .link
             %a{:href => thing.click_url, :target => '_blank'}= '<i class="icon-shopping-cart"></i> 购买链接'.html_safe
+    = will_paginate @things
   .blocks
-    .tags
-      .head 热门标签
-      .wrapper
-        - Section.where('name = ?', I18n.t('timeline')).first.tags.first.name.split(',').map {|t| t.strip}[0..14].each do |t|
-          %a.tag{:href => '#'}= "#{t[0..4]}".html_safe
+    .promotions
+      .head 促销活动
+      - @promotions.each_with_index do |p, i|
+        .promotion
+          %span.num= "#{(i+1).to_s}. "
+          %a{:href => p.try(:url), :target => '_blank'}= p.title
     .malls
       .head 热门商家
       .wrapper
         - @malls.each do |mall|
           %a{:href => mall.try(:url), :target => '_blank'}
             %img{:src => mall.try(:logo_url)}
-    .sales
-      .head 打折促销
+    .tags
+      .head 热门标签
+      .wrapper
+        - Section.where('name = ?', I18n.t('timeline')).first.tags.first.name.split(',').map {|t| t.strip}[0..14].each do |t|
+          %a.tag{:href => '#'}= "#{t[0..4]}".html_safe
     .ads
       - unless @ad_home_right_bottom.nil?
         #ad_home_right_bottom{:style => "width:#{@ad_home_right_bottom.try(:width)};height:#{@ad_home_right_bottom.try(:height)}"}= @ad_home_right_bottom.try(:code).html_safe

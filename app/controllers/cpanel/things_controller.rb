@@ -4,7 +4,7 @@ class Cpanel::ThingsController < CpanelController
   # GET /cpanel/things
   # GET /cpanel/things.json
   def index
-    @cpanel_things = Cpanel::Thing.all
+    @cpanel_things = Cpanel::Thing.paginate(:page => params[:page], :per_page => 10).order('id desc')
   end
 
   # GET /cpanel/things/1

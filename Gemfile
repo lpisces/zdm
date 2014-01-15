@@ -34,6 +34,10 @@ gem "fancy-buttons"
 #auth
 gem 'devise'
 
+#分页
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+
 #javascript runtime
 gem 'therubyracer', platforms: :ruby
 

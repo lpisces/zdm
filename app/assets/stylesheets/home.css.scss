@@ -19,6 +19,24 @@
   .things{
     width:700px;
     float:left;
+    .pagination{
+      margin-top: 30px;
+      font-size:18px;
+      a,span{
+        font-size:14px;
+        margin: 10px 10px 0 0 ;
+        color:#444;
+      }
+      em{
+        font-size:14px;
+        margin: 10px 10px 0 0 ;
+      }
+      em,
+      a:hover{
+        background-color:#fff;
+        color:#cc6600;
+      }
+    }
     .thing{
       margin-top:10px;
       border:1px solid #f6f6f6;
@@ -60,7 +78,7 @@
         }
       }
       .block-2{
-        @include min-height(2500px);
+        @include min-height(500px);
         position:absolute;
         right:10px;
         top:0px;
@@ -130,10 +148,21 @@
       }
     }
   
-    .sales{
+    .promotions{
       border-top:4px solid #4b65c6;
       margin-top:10px;
+      padding:5px;
       @include min-height(400px);
+      span.num{
+        color:#cc6600;
+        font-weight: bold;
+      }
+      a{
+        color:#444;
+      }
+      a:hover{
+        color:#cc6600;
+      }
     }
 
     .ads{

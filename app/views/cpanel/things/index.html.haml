@@ -4,6 +4,7 @@
     %span.divider /
   %li.active= I18n.t("cpanel_things.title")
 
+= link_to I18n.t('common.new'), new_cpanel_thing_path
 %table.table.table-condensed.table-bordered.table-hover
   %tr
     %th= I18n.t('cpanel_things.master_pic_url')
@@ -29,5 +30,7 @@
       %td
         = link_to '<i class="icon-pencil"></i>'.html_safe, edit_cpanel_thing_path(cpanel_thing)
         = link_to '<i class="icon-remove"></i>'.html_safe, cpanel_thing, :method => :delete, :data => { :confirm => I18n.t('common.confirm') }
+
+= will_paginate @cpanel_things
 
 = link_to I18n.t('common.new'), new_cpanel_thing_path

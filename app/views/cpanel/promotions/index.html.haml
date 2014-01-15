@@ -17,7 +17,8 @@
   - @cpanel_promotions.each do |cpanel_promotion|
     %tr
       %td= cpanel_promotion.title
-      %td= cpanel_promotion.url
+      %td
+        %a{:href => cpanel_promotion.url}= I18n.t('cpanel_promotions.url')
       %td= cpanel_promotion.mall_id
       %td= cpanel_promotion.content
       %td= cpanel_promotion.order
