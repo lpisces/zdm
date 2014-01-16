@@ -331,3 +331,19 @@ Cpanel::Tag.seed do |s|
   s.name = '测试'
   s.section_id = 11
 end
+
+Cpanel::Ad.seed do |s|
+  s.position = 'stat_code'
+end
+
+Cpanel::Ad.seed do |s|
+  s.position = 'home_right_bottom'
+end
+
+Cpanel::Ad.seed do |s|
+  s.position = 'thing_right_bottom'
+end
+
+Cpanel::Ad.seed do |s|
+  s.position = 'home_left_bottom'
+end

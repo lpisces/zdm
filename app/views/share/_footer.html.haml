@@ -1,4 +1,6 @@
 .wrapper
+  - unless @stat_code.nil?
+    #stat_code{:style => "float:right;width:#{@stat_code.try(:width)};height:#{@stat_code.try(:height)}"}= @stat_code.try(:code).html_safe
   .copyright= "#{Setting.find_by_name('site_name').try(:value)} &copy; 2013 &nbsp;|&nbsp;All rights reserved.".html_safe
   .links
     %a{:href => '/about'}= I18n.t('about')
